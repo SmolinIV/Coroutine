@@ -37,6 +37,11 @@ public class Timer : MonoBehaviour
         }
     }
 
+    private void UpdateTimeText()
+    {
+        _text.text = _timerValueInSeconds.ToString("0.0");
+    }
+
     private IEnumerator CountSeconds()
     {
         float delayInSeconds = 0.5f;
@@ -52,11 +57,6 @@ public class Timer : MonoBehaviour
 
             yield return delay;
         }
-    }
-
-    private void UpdateTimeText()
-    {
-        _text.text = _timerValueInSeconds.ToString("0.0");
     }
 }
 
